@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/wordpress/vendor/autoload.php';
 
 use Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
 // Load the environment variables.
-Dotenv::createImmutable(realpath(__DIR__ . '/../'))->safeLoad();
+Dotenv::createImmutable(realpath(__DIR__))->safeLoad();
 
 // Set the environment type.
 define('WP_ENVIRONMENT_TYPE', $_ENV['WP_ENVIRONMENT_TYPE']??'production');
@@ -80,7 +80,7 @@ define('WP_POST_REVISIONS', $_ENV['WP_POST_REVISIONS']?? 2);
 
 // Set the absolute path to the WordPress directory.
 if (!defined('ABSPATH')) {
-    define('ABSPATH', sprintf('%s/%s/', __DIR__, $_ENV['WP_DIR']?? 'wordpress'));
+    define('ABSPATH', sprintf('%s/', __DIR__, $_ENV['WP_DIR'] ?? 'wordpress'));
 }
 
 // Set the database table prefix.

@@ -16,7 +16,6 @@
         "roots/wp-password-bcrypt": "^1.1",
         "symfony/http-foundation": "^6.3",
         "timber/timber": "^2.0",
-        "vinkla/headache": "^3.2.2",
         "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
@@ -44,6 +43,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
+        "vendor-dir": "wordpress/vendor/",
         "allow-plugins": {
             "composer/installers": true,
             "roots/wordpress-core-installer": true,
@@ -55,18 +55,18 @@
     },
     "extra": {
         "installer-paths": {
-            "public/plugins/{$name}": [
+            "plugins/{$name}": [
                 "type:wordpress-plugin"
             ],
-            "public/themes/{$name}": [
+            "themes/{$name}": [
                 "type:wordpress-theme"
             ]
         },
-        "wordpress-install-dir": "public/wordpress",
+        "wordpress-install-dir": "wordpress",
         "dropin-paths": {
-            "public/languages/": ["type:wordpress-language"],
-            "public/languages/plugins/": ["vendor:koodimonni-plugin-language"],
-            "public/languages/themes/": ["vendor:koodimonni-theme-language"]
+            "languages/": ["type:wordpress-language"],
+            "languages/plugins/": ["vendor:koodimonni-plugin-language"],
+            "languages/themes/": ["vendor:koodimonni-theme-language"]
         }
     },
     "scripts": {
