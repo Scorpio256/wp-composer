@@ -1,6 +1,6 @@
 {
-    "name": "vinkla/wordplate",
-    "description": "The WordPlate boilerplate",
+    "name": "scorpio256/wp-composer",
+    "description": "The Wordpress Composer project template",
     "license": "MIT",
     "type": "project",
     "keywords": [
