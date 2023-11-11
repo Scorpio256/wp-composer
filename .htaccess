@@ -1,0 +1,5 @@
+#php_flag display_errors off
+#Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.*)$ public/$1
