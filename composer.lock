@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ee4e18ceb726ce5c116ec0e4dab43b5",
+    "content-hash": "ec6d9c96bbaeafd8c77b0fcd0ef40037",
     "packages": [
         {
             "name": "composer/installers",
@@ -1984,24 +1984,6 @@
                 }
             ],
             "time": "2022-10-16T01:01:54+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/clean-image-filenames",
-            "version": "1.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/clean-image-filenames/",
-                "reference": "tags/1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/clean-image-filenames.1.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/clean-image-filenames/"
         }
     ],
     "packages-dev": [

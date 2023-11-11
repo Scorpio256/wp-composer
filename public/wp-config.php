@@ -17,9 +17,9 @@ define('WP_ENVIRONMENT_TYPE', $_ENV['WP_ENVIRONMENT_TYPE']??'production');
 define('WP_DEFAULT_THEME', $_ENV['WP_DEFAULT_THEME']??'wordplate');
 
 // For developers: WordPress debugging mode.
-$isDebugModeEnabled = $_ENV['WP_DEBUG']?? false;
+$isDebugModeEnabled = (boolean)($_ENV['WP_DEBUG']?? false);
 define('WP_DEBUG', $isDebugModeEnabled);
-define('WP_DEBUG_LOG', $_ENV['WP_DEBUG_LOG']?? false);
+define('WP_DEBUG_LOG', (boolean)($_ENV['WP_DEBUG_LOG']?? false));
 define('WP_DEBUG_DISPLAY', $_ENV['WP_DEBUG_DISPLAY']?? $isDebugModeEnabled);
 define('SCRIPT_DEBUG', $_ENV['SCRIPT_DEBUG']?? $isDebugModeEnabled);
 
@@ -58,22 +58,22 @@ define('WP_CONTENT_DIR', $_ENV['WP_CONTENT_DIR']?? __DIR__);
 define('WP_CONTENT_URL', $_ENV['WP_CONTENT_URL']?? WP_HOME);
 
 // Disable WordPress auto updates.
-define('AUTOMATIC_UPDATER_DISABLED', $_ENV['AUTOMATIC_UPDATER_DISABLED']?? true);
+define('AUTOMATIC_UPDATER_DISABLED', (boolean)($_ENV['AUTOMATIC_UPDATER_DISABLED']?? true));
 
 // Disable WP-Cron (wp-cron.php) for faster performance.
-define('DISABLE_WP_CRON', $_ENV['DISABLE_WP_CRON']?? false);
+define('DISABLE_WP_CRON', (boolean)($_ENV['DISABLE_WP_CRON']?? false));
 
 // Prevent file edititing from the dashboard.
-define('DISALLOW_FILE_EDIT', $_ENV['DISALLOW_FILE_EDIT']?? true);
+define('DISALLOW_FILE_EDIT', (boolean)($_ENV['DISALLOW_FILE_EDIT']?? true));
 
 // Disable plugin and theme updates and installation from the dashboard.
-define('DISALLOW_FILE_MODS', $_ENV['DISALLOW_FILE_MODS']?? true);
+define('DISALLOW_FILE_MODS', (boolean)($_ENV['DISALLOW_FILE_MODS']?? true));
 
 // Cleanup WordPress image edits.
-define('IMAGE_EDIT_OVERWRITE', $_ENV['IMAGE_EDIT_OVERWRITE']?? true);
+define('IMAGE_EDIT_OVERWRITE', (boolean)($_ENV['IMAGE_EDIT_OVERWRITE']?? true));
 
 // Disable technical issues emails.
-define('WP_DISABLE_FATAL_ERROR_HANDLER', $_ENV['WP_DISABLE_FATAL_ERROR_HANDLER']?? false);
+define('WP_DISABLE_FATAL_ERROR_HANDLER', (boolean)($_ENV['WP_DISABLE_FATAL_ERROR_HANDLER']?? false));
 
 // Limit the number of post revisions.
 define('WP_POST_REVISIONS', $_ENV['WP_POST_REVISIONS']?? 2);
