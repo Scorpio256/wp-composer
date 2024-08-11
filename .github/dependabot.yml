@@ -2,6 +2,6 @@ version: 2
 updates:
   - package-ecosystem: "composer"
     directory: "/"
-    target-branch: "dev"
+    target-branch: "master"
     schedule:
       interval: "daily"
