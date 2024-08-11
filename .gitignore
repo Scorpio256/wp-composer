@@ -7,7 +7,6 @@
 !/mu-plugins/mu-plugins.php
 /plugins/*
 !/plugins/index.php
-/themes/*/assets
 /upgrade
 /uploads
 /wordpress

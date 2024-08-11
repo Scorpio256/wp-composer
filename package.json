@@ -1,0 +1,13 @@
+{
+  "name": "wp-composer",
+  "version": "1.0.0",
+  "description": "WordPress Plugin with Webpack",
+  "main": "index.php",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode developement"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5"
+  }
+}
