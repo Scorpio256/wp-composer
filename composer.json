@@ -10,16 +10,16 @@
     "require": {
         "php": "^8.1",
         "composer/installers": "^2.2",
-        "koodimonni-language/cs_cz": "^6.4",
+        "koodimonni-language/cs_cz": "^6.6",
         "roots/bedrock-autoloader": "^1.0.4",
-        "roots/wordpress": "^6.4.1",
+        "roots/wordpress": "^6.6",
         "roots/wp-password-bcrypt": "^1.1",
         "symfony/http-foundation": "^6.4",
-        "timber/timber": "^2.0",
-        "vlucas/phpdotenv": "^5.5"
+        "timber/timber": "^2.2",
+        "vlucas/phpdotenv": "^5.6"
     },
     "require-dev": {
-        "symfony/var-dumper": "^6.4"
+        "symfony/var-dumper": "^6.3"
     },
     "repositories": [
         {
