@@ -215,10 +215,10 @@
         },
         {
             "name": "koodimonni-language/cs_cz",
-            "version": "6.4.1",
+            "version": "6.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/6.4.1/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/core/6.6.1/cs_CZ.zip"
             },
             "require": {
                 "koodimonni-plugin-language/akismet-cs_cz": "*",
@@ -232,6 +232,7 @@
                 "koodimonni-plugin-language/opml-importer-cs_cz": "*",
                 "koodimonni-plugin-language/press-this-cs_cz": "*",
                 "koodimonni-plugin-language/rss-importer-cs_cz": "*",
+                "koodimonni-plugin-language/sqlite-database-integration-cs_cz": "*",
                 "koodimonni-plugin-language/woocommerce-cs_cz": "*",
                 "koodimonni-plugin-language/wordpress-importer-cs_cz": "*",
                 "koodimonni-plugin-language/wp-jquery-update-test-cs_cz": "*",
@@ -262,10 +263,10 @@
         },
         {
             "name": "koodimonni-plugin-language/akismet-cs_cz",
-            "version": "5.3",
+            "version": "5.3.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/akismet/5.3/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/akismet/5.3.3/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -281,10 +282,10 @@
         },
         {
             "name": "koodimonni-plugin-language/bbpress-cs_cz",
-            "version": "2.6.9",
+            "version": "2.6.11",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/bbpress/2.6.9/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/bbpress/2.6.11/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -319,10 +320,10 @@
         },
         {
             "name": "koodimonni-plugin-language/classic-editor-cs_cz",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/classic-editor/1.6.3/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/classic-editor/1.6.4/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -357,10 +358,10 @@
         },
         {
             "name": "koodimonni-plugin-language/debug-bar-cs_cz",
-            "version": "1.1.4",
+            "version": "1.1.6",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/debug-bar/1.1.4/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/debug-bar/1.1.6/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -376,10 +377,10 @@
         },
         {
             "name": "koodimonni-plugin-language/health-check-cs_cz",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/health-check/1.7.0/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/health-check/1.7.1/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -452,10 +453,10 @@
         },
         {
             "name": "koodimonni-plugin-language/rss-importer-cs_cz",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/rss-importer/0.3.1/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/rss-importer/0.3.2/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -470,11 +471,30 @@
             ]
         },
         {
-            "name": "koodimonni-plugin-language/woocommerce-cs_cz",
-            "version": "8.2.2",
+            "name": "koodimonni-plugin-language/sqlite-database-integration-cs_cz",
+            "version": "2.1.13",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/8.2.2/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/sqlite-database-integration/2.1.13/cs_CZ.zip"
+            },
+            "require": {
+                "koodimonni/composer-dropin-installer": ">=0.2.3"
+            },
+            "type": "wordpress-language",
+            "description": "WordPress sqlite-database-integration translations for Czech - cs_cz",
+            "keywords": [
+                "Translation",
+                "WordPress",
+                "cs_cz",
+                "sqlite-database-integration"
+            ]
+        },
+        {
+            "name": "koodimonni-plugin-language/woocommerce-cs_cz",
+            "version": "9.1.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/woocommerce/9.1.4/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -490,10 +510,10 @@
         },
         {
             "name": "koodimonni-plugin-language/wordpress-importer-cs_cz",
-            "version": "0.8.1",
+            "version": "0.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/wordpress-importer/0.8.1/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/wordpress-importer/0.8.2/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -509,10 +529,10 @@
         },
         {
             "name": "koodimonni-plugin-language/wp-jquery-update-test-cs_cz",
-            "version": "2.0.0",
+            "version": "3.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/wp-jquery-update-test/2.0.0/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/plugin/wp-jquery-update-test/3.0.0/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -528,10 +548,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyeleven-cs_cz",
-            "version": "4.5",
+            "version": "4.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyeleven/4.5/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentyeleven/4.7/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -547,10 +567,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyfifteen-cs_cz",
-            "version": "3.6",
+            "version": "3.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/3.6/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/3.7/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -566,10 +586,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyfourteen-cs_cz",
-            "version": "3.8",
+            "version": "3.9",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyfourteen/3.8/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentyfourteen/3.9/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -585,10 +605,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentynineteen-cs_cz",
-            "version": "2.7",
+            "version": "2.8",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentynineteen/2.7/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentynineteen/2.8/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -604,10 +624,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyseventeen-cs_cz",
-            "version": "3.4",
+            "version": "3.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyseventeen/3.4/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentyseventeen/3.7/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -623,10 +643,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentysixteen-cs_cz",
-            "version": "3.1",
+            "version": "3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentysixteen/3.1/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentysixteen/3.2/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -642,10 +662,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyten-cs_cz",
-            "version": "4.0",
+            "version": "4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyten/4.0/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentyten/4.2/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -661,10 +681,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentythirteen-cs_cz",
-            "version": "4.0",
+            "version": "4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentythirteen/4.0/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentythirteen/4.1/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -680,10 +700,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentytwelve-cs_cz",
-            "version": "4.1",
+            "version": "4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentytwelve/4.1/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentytwelve/4.3/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -699,10 +719,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentytwenty-cs_cz",
-            "version": "2.4",
+            "version": "2.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentytwenty/2.4/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentytwenty/2.7/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -737,10 +757,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentytwentythree-cs_cz",
-            "version": "1.2",
+            "version": "1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentytwentythree/1.2/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentytwentythree/1.5/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -756,10 +776,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentytwentytwo-cs_cz",
-            "version": "1.5",
+            "version": "1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentytwentytwo/1.5/cs_CZ.zip"
+                "url": "https://downloads.wordpress.org/translation/theme/twentytwentytwo/1.7/cs_CZ.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -2039,5 +2059,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
