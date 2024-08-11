@@ -8,6 +8,6 @@
     "watch": "webpack --watch --mode developement"
   },
   "devDependencies": {
-    "webpack": "^4.41.5"
+    "webpack": "^5.93.0"
   }
 }
