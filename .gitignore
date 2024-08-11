@@ -12,3 +12,4 @@
 /wordpress
 /vendor
 auth.json
+/themes/*/assets/

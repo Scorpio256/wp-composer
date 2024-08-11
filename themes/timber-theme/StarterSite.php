@@ -106,6 +106,16 @@ class StarterSite extends Site
 		);
 
 		add_theme_support('menus');
+
+        add_action('wp_enqueue_scripts', function () {
+            $cssFilePath = glob(get_template_directory() . '/assets/styles/main.min.*.css');
+            $cssFileURI = get_template_directory_uri() . '/assets/styles/' . basename($cssFilePath[0]);
+            wp_enqueue_style('main_css', $cssFileURI);
+
+            $jsFilePath = glob(get_template_directory() . '/assets/scripts/main.min.*.js');
+            $jsFileURI = get_template_directory_uri() . '/assets/scripts/' . basename($jsFilePath[0]);
+            wp_enqueue_script('main_js', $jsFileURI, null, null, true);
+        });
 	}
 
 	/**
