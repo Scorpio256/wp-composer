@@ -1,11 +1,11 @@
 const path = require('path');
 
-// css extraction and minification
+// CSS extraction and minification
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-// clean out build dir in-between builds
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+// Clean out build dir in-between builds
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 require('dotenv').config();
 const themeName = process.env.WP_DEFAULT_THEME;
@@ -21,23 +21,40 @@ module.exports = [
       ]
     },
     output: {
-      filename: appEnv==='Localhost'?'./themes/' + themeName + '/assets/scripts/[name].min.local.js':'./themes/' + themeName + '/assets/scripts/[name].min.[fullhash].js',
+      filename: './themes/' + themeName + '/assets/scripts/[name].min.js',
       path: path.resolve(__dirname)
     },
     module: {
       rules: [
-        // js babelization
+        // JS babelization
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
         },
-        // sass compilation
+        // Sass compilation with CSS source maps enabled
         {
           test: /\.(sass|scss)$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+                sassOptions: {
+                  includePaths: [path.resolve(__dirname, 'node_modules')]
+                },
+              }
+            }
+          ]
         },
-        // loader for webfonts (only required if loading custom fonts)
+        // Loader for webfonts (only required if loading custom fonts)
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           type: 'asset/resource',
@@ -45,7 +62,7 @@ module.exports = [
             filename: './themes/' + themeName + '/assets/fonts/[name][ext]',
           }
         },
-        // loader for images and icons (only required if css references image files)
+        // Loader for images and icons (only required if CSS references image files)
         {
           test: /\.(png|jpg|gif)$/,
           type: 'asset/resource',
@@ -56,26 +73,27 @@ module.exports = [
       ]
     },
     plugins: [
-      // clear out build directories on each build
+      // Clear out build directories on each build
       new CleanWebpackPlugin({
         cleanOnceBeforeBuildPatterns: [
           './themes/' + themeName + '/assets/scripts/*',
           './themes/' + themeName + '/assets/styles/*'
         ]
       }),
-      // css extraction into dedicated file
+      // CSS extraction into a dedicated file
       new MiniCssExtractPlugin({
-        filename: appEnv==='Localhost'?'./themes/' + themeName + '/assets/styles/main.min.local.css':'./themes/' + themeName + '/assets/styles/main.min.[fullhash].css'
+        filename: './themes/' + themeName + '/assets/styles/main.min.css'
       }),
     ],
     optimization: {
-      // minification - only performed when mode = production
+      // Minification - only performed when mode = production
       minimizer: [
-        // js minification - special syntax enabling webpack 5 default terser-webpack-plugin
+        // JS minification - special syntax enabling Webpack 5 default terser-webpack-plugin
         `...`,
-        // css minification
+        // CSS minification
         new CssMinimizerPlugin(),
       ]
     },
+    devtool: 'source-map', // Enable source maps for easier debugging
   }
 ];

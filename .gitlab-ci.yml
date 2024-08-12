@@ -1,61 +1,51 @@
 stages:
   - deploy
 
-before_script:
-  - apt-get update -qq && apt-get install -y -qq lftp && apt-get install
-  - curl -sS https://getcomposer.org/installer | php
-  - curl -sS https://github.com/dg/ftp-deployment/releases/download/v3.6.0/deployment.phar --output deployment.phar
-  - touch ".env" | sed -e "s|\$HTTPS_URL|${HTTPS_URL}|g" -e "s|\$DB_HOSTNAME|${DB_HOSTNAME}|g" -e "s|\$DB_USERNAME|${DB_USERNAME}|g" -e "s|\$DB_PASSWORD|${DB_PASSWORD}|g" -e "s|\$DB_DATABASE|${DB_DATABASE}|g" ".env.example" > ".env"
+.deploy:
+  image: composer:latest
+  stage: deploy
+  script:
+    - sed -e "s|\$HTTPS_URL|${HTTPS_URL}|g" -e "s|\$DB_HOSTNAME|${DB_HOSTNAME}|g" -e "s|\$DB_USERNAME|${DB_USERNAME}|g" -e "s|\$DB_PASSWORD|${DB_PASSWORD}|g" -e "s|\$DB_DATABASE|${DB_DATABASE}|g" -e "s|\$CI_ENVIRONMENT_NAME|${CI_ENVIRONMENT_NAME}|g" -e "s|\$CI_PROJECT_NAME|${CI_PROJECT_NAME}|g" ".env.example" > ".env"
 
+    - git config git-ftp.url "ftp://$_FTP_HOST:21"
+    - git config git-ftp.user "$_FTP_USER"
+    - git config git-ftp.password "$_FTP_PASS"
 
-  - npm install
-  - git reset --hard
+    # Perform the deployment
+    - composer install --no-dev --optimize-autoloader
+    - npm install
+    - npm run build
+
+    - git status
+    - git config git-ftp.syncroot ""
+    - git config git-ftp.remote-root "${_FTP_ROOT}"
+    - git ftp push --auto-init
+
+    # Perform the installation
+    # - wget -O- "$HTTPS_URL/cron.php?cron_code=other_innoit_installer" --content-on-error --read-timeout=5400
 
 deploy_dev:
-  stage: deploy
+  extends: .deploy
+  only:
+    - dev
   environment:
     name: "Development"
     url: $HTTPS_URL
-  script:
-    - git config git-ftp.url "ftp://$FTP_DEV_HOST:21"
-    - git config git-ftp.user "innoit$CI_PROJECT_NAME"
-    - git config git-ftp.password "$FTP_DEV_PASSWORD"
+  variables:
+    _FTP_HOST: $FTP_DEV_HOST
+    _FTP_USER: $FTP_DEV_USERNAME
+    _FTP_PASS: $FTP_DEV_PASSWORD
+    _FTP_ROOT: ''
 
-    # Perform the deployment
-    - php composer.phar install --no-dev --optimize-autoloader
-    - git add .env -f
-    - git commit -m "Update wp-config.php"
-    - git config git-ftp.syncroot ""
-    - git config git-ftp.remote-root "web"
-    - git checkout package-lock.json
-    - git ftp push --auto-init
-    - git rm wp-config.php
-    - git commit -m "Delete wp-config.php"
-
+deploy_main:
+  extends: .deploy
   only:
-    - dev
-
-deploy_master:
-  stage: deploy
+    - main
   environment:
     name: "Production"
     url: $HTTPS_URL
-  script:
-    - git config git-ftp.url "ftp://$FTP_HOST:21"
-    - git config git-ftp.user "$FTP_USER"
-    - git config git-ftp.password "$FTP_PASS"
-
-    # Perform the deployment
-    - php composer.phar install --no-dev --optimize-autoloader
-    - npm run build
-    - git add wp-config.php -f
-    - git commit -m "Update wp-config.php"
-    - git config git-ftp.syncroot ""
-    - git config git-ftp.remote-root ""
-    - git checkout package-lock.json
-    - git ftp push --auto-init
-    - git rm wp-config.php
-    - git commit -m "Delete wp-config.php"
-
-  only:
-    - master
+  variables:
+    _FTP_HOST: $FTP_HOST
+    _FTP_USER: $FTP_USER
+    _FTP_PASS: $FTP_PASS
+    _FTP_ROOT: ''

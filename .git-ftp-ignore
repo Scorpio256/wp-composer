@@ -1,0 +1,10 @@
+.git*
+php.ini
+composer*
+package*
+gruntfile.js
+README.md
+node_modules
+webpack.config.js
+.env.example
+themes/pbf/src/

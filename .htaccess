@@ -6,9 +6,20 @@
 # END WordPress
 
 RewriteEngine On
-RewriteRule ^$ /wordpress/ [L]
 
+# Allow direct access to files within the uploads directory
+RewriteCond %{REQUEST_URI} ^/uploads/ [NC]
+RewriteRule ^ - [L]
+
+# Allow direct access to files within the plugins directory
+RewriteCond %{REQUEST_URI} ^/plugins/ [NC]
+RewriteRule ^ - [L]
+
+# Redirect the root URL to the WordPress directory
+RewriteRule ^(.*)$ /wordpress/$1 [L]
+
+# Handle requests to files and directories that don't exist
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/wordpress/
-RewriteRule ^(.*)$ /wordpress/$1
+RewriteRule ^(.*)$ /wordpress/$1 [L]

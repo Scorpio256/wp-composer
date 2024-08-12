@@ -11,6 +11,3 @@
 
 ## Deploy
  - Je nastaveno aby se theme jmenovalo stejně jako repozitář proto je potřeba default theme přejmenovat
-
-
-https://taylor.callsen.me/using-webpack-5-and-sass-with-wordpress/

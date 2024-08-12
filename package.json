@@ -1,7 +1,7 @@
 {
-  "name": "wp-composer",
+  "name": "pbf",
   "version": "1.0.0",
-  "description": "WordPress Plugin with Webpack",
+  "description": "WordPress Webpack",
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development"

@@ -1,0 +1,5 @@
+!themes/pbf/assets
+!.env
+wordpress:composer.lock
+languages:composer.lock
+plugins:composer.lock
