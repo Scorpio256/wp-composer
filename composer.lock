@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db54c105adcdfcd60fa5f736293f3ed9",
+    "content-hash": "d38d0db2b8fcd6c7d9f79c51c8588217",
     "packages": [
         {
             "name": "composer/installers",
@@ -2125,15 +2125,15 @@
         },
         {
             "name": "wpackagist-plugin/really-simple-ssl",
-            "version": "8.1.6",
+            "version": "8.3.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/really-simple-ssl/",
-                "reference": "tags/8.1.6"
+                "reference": "tags/8.3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/really-simple-ssl.8.1.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/really-simple-ssl.8.3.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2331,5 +2331,5 @@
     "platform-overrides": {
         "php": "8.1.20"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
